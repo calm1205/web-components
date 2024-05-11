@@ -1,1 +1,1 @@
-export { WordCount } from "./LogWord";
+export { LogWord } from "./LogWord.js";

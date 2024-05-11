@@ -1,1 +1,1 @@
-export { LogWord } from "./LogWord.js";
+export { LogWord } from "./components/LogWord.js";

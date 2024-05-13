@@ -2,11 +2,9 @@ export class CustomButton extends HTMLElement {
   constructor() {
     super();
 
-    const template = document.createElement("template");
+    const template = document.createElement("button");
     template.innerHTML = `
-      <button>
-        <slot>default</slot>
-      </button>
+      <slot>default</slot>
     `;
 
     const style = document.createElement("style");
@@ -16,11 +14,16 @@ export class CustomButton extends HTMLElement {
         background-color: cornflowerblue;
         border: none;
         border-radius: 4px;
+        cursor: pointer;
       }
     `;
 
     this.customShadowRoot = this.attachShadow({ mode: "open" });
-    this.customShadowRoot.appendChild(template.content.cloneNode(true));
+
+    template.addEventListener("click", () => {
+      console.log("clicked");
+    });
+    this.customShadowRoot.appendChild(template);
     this.customShadowRoot.appendChild(style);
     this.render();
   }

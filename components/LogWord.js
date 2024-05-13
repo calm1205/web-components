@@ -14,7 +14,7 @@ export class LogWord extends HTMLElement {
 
     const button = document.createElement("button");
     button.addEventListener("click", () => console.log(dom.innerHTML));
-    button.innerText = "click me";
+    button.innerText = "write log";
     this.shadowRoot.appendChild(button);
   }
 }

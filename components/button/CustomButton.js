@@ -28,10 +28,12 @@ export class CustomButton extends HTMLElement {
     this.render();
   }
 
+  // size attributeを監視
   static get observedAttributes() {
     return ["size"];
   }
 
+  // size attributeが変更されたときに再描画してスタイルの変更を反映
   attributeChangedCallback() {
     if (this.isConnected) this.render();
   }
